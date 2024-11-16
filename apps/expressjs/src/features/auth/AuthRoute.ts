@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { AuthController } from './AuthController';
-import { LoginUser } from './usecases';
+import { LoginUser, TYPES } from './usecases';
+import { container } from '../../inversify.config';
 
 export class AuthRoute {
   public router: Router;
@@ -10,7 +11,7 @@ export class AuthRoute {
 
   constructor() {
     this.router = Router();
-    this.authController = new AuthController();
+    this.authController = container.get<AuthController>(TYPES.AuthController);
 
     this.initializeRoutes();
   }

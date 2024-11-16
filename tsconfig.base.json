@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@expressjs/security": ["packages/security/src/index.ts"]
+    },
+    "types": ["reflect-metadata"]
   },
   "exclude": ["node_modules", "tmp"]
 }
